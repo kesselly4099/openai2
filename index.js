@@ -1,4 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai'
+import { process } from './evn'
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -40,6 +41,7 @@ async function fetchReply(){
     }) 
     conversationStr += ` ${response.data.choices[0].text}`
     renderTypewriterText(response.data.choices[0].text)
+    console.log(conversationStr)
 }
 
 function renderTypewriterText(text) {
