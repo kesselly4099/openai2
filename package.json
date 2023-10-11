@@ -4,7 +4,10 @@
     "openai": "3.2.1"
   },
   "devDependencies": {
-    "vite": "latest"
+    "concurrently": "^8.2.1",
+    "http-server": "^14.1.1",
+     "vite": "latest",
+    "netlify-cli" : "^2.69.11"
   },
   "scripts": {
     "start": "vite",
