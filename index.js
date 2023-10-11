@@ -1,10 +1,10 @@
-// import { Configuration, OpenAIApi } from 'openai'
+import { Configuration, OpenAIApi } from 'openai'
 
-// const configuration = new Configuration({
-//     apiKey: process.env.OPENAI_API_KEY,
-// })
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY,
+})
 
-// const openai = new OpenAIApi(configuration)
+const openai = new OpenAIApi(configuration)
 
 const chatbotConversation = document.getElementById('chatbot-conversation')
  
@@ -26,30 +26,20 @@ document.addEventListener('submit', (e) => {
 }) 
 
 async function fetchReply(){
-    const url = 'https://master--lucent-unicorn-153e24.netlify.app/netlify/functions/chatbot'
-    const response = await fetch(url,{
-        method: 'post',
-        headers: {
-            'content-type':'text/plain'
-        },
-        body: conversationStr
-    })
-
-    const data = await response.json()
-    console.log(data)
     
-    // const response = await openai.createCompletion({
-    //     model: 'davinci:ft-k3telecom-2023-10-08-20-47-32',
-    //     prompt: conversationStr,
-    //     presence_penalty: 0,
-    //     frequency_penalty: 0.3,
-    //     temperature: 0,
-    //     max_tokens: 100,
-    //     stop:['\n','->']
+    
+    const response = await openai.createCompletion({
+        model: 'davinci:ft-k3telecom-2023-10-08-20-47-32',
+        prompt: conversationStr,
+        presence_penalty: 0,
+        frequency_penalty: 0.3,
+        temperature: 0,
+        max_tokens: 100,
+        stop:['\n','->']
         
-    // }) 
-    // conversationStr += ` ${response.data.choices[0].text}`
-    // renderTypewriterText(response.data.choices[0].text)
+    }) 
+    conversationStr += ` ${response.data.choices[0].text}`
+    renderTypewriterText(response.data.choices[0].text)
 }
 
 function renderTypewriterText(text) {
