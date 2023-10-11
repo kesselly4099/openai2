@@ -26,7 +26,7 @@ document.addEventListener('submit', (e) => {
 }) 
 
 async function fetchReply(){
-    const url = 'https://master--lucent-unicorn-153e24.netlify.app/.netlify/functions/chatbot'
+    const url = 'https://master--lucent-unicorn-153e24.netlify.app/netlify/functions/chatbot'
     const response = await fetch(url,{
         method: 'post',
         headers: {
