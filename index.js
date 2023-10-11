@@ -30,7 +30,8 @@ async function fetchReply(){
     
     
     const response = await openai.createCompletion({
-        model: 'davinci:ft-k3telecom-2023-10-08-20-47-32',
+     model: 'davinci:ft-k3telecom-2023-10-08-20-47-32',
+        
         prompt: conversationStr,
         presence_penalty: 0,
         frequency_penalty: 0.3,
@@ -39,7 +40,7 @@ async function fetchReply(){
         stop:['\n','->']
         
     }) 
-    conversationStr += ` ${response.data.choices[0].text}`
+    conversationStr += ` ${response.data.choices[0].text} \n`
     renderTypewriterText(response.data.choices[0].text)
     console.log(conversationStr)
 }
