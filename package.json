@@ -1,18 +1,35 @@
 {
-  "name": "project",
+  "name": "openai2",
   "dependencies": {
+    "express": "^4.18.2",
     "openai": "3.2.1"
   },
   "devDependencies": {
     "concurrently": "^8.2.1",
     "http-server": "^14.1.1",
-     "vite": "latest",
-    "netlify-cli" : "^2.69.11"
+    "netlify-cli": "^16.6.1",
+    "vite": "latest"
   },
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
-  }
+  },
+  "description": "Quick start:",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [
+    "ye"
+  ],
+  "author": "kesselly",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kesselly4099/openai2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kesselly4099/openai2/issues"
+  },
+  "homepage": "https://github.com/kesselly4099/openai2#readme"
 }
