@@ -1,8 +1,7 @@
 import { Configuration, OpenAIApi } from 'openai'
-import { process } from './evn'
-
+import OPENAI_API_KEY from './api'
 const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: OPENAI_API_KEY,
 })
 
 const openai = new OpenAIApi(configuration)
@@ -32,7 +31,7 @@ async function fetchReply(){
     const response = await openai.createCompletion({
      model: 'davinci:ft-k3telecom-2023-10-08-20-47-32',
         
-        prompt: conversationStr,
+ prompt: conversationStr,
         presence_penalty: 0,
         frequency_penalty: 0.3,
         temperature: 0,
